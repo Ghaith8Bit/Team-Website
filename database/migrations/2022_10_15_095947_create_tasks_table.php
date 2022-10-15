@@ -20,7 +20,7 @@ return new class extends Migration
             $table->dateTime('start_at');
             $table->dateTime('end_at');
             $table->dateTime('postponementat_at')->nullable();
-            $table->integer('postponementat')->unsigned()->nullable()->default(0);
+            $table->boolean('status')->default(false);
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
